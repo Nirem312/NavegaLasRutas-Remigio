@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
-import { getProducts } from "../../asyncMock";
+import { devolverProductos } from "../../asyncMock";
 import { Item } from "../components/Item"
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts()
+    devolverProductos()
       .then(res => {
         setProducts(res);
       })
@@ -16,7 +16,7 @@ export const ItemListContainer = () => {
   }, [])
 
   return (
-    <div>
+    <div className="containerDeProductos">
       {products.map(prod => <Item key={prod.Id} {...prod}/>)}
     </div>
   )

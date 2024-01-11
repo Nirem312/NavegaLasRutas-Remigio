@@ -19,10 +19,18 @@ let datos = [
   }
 ]
 
-export const getProducts = () => {
+export const devolverProductos = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(datos);
-    }, 1000)
+    }, 1000);
+  })
+}
+
+export const devolverProductoPorId = (id) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(datos.find(prod => prod.Id == id));
+    }, 1000);
   })
 }
