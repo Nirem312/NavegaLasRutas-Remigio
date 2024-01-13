@@ -177,7 +177,7 @@ input, textarea, select {
 }
 
 #icono{
-  height: 70px;
+  height: 60px;
   position: absolute;
   margin: 0;
   top: 0;
@@ -485,6 +485,7 @@ li {
 .texto-grid p {
   text-align: left;
   padding: 0;
+  height: 30px;
 }
 
 html,
@@ -529,6 +530,7 @@ p {
   color: #757575;
   font-size: 1.2rem;
   text-align: center;
+  height: 30px;
   line-height: 1.5em;
 }
 
@@ -539,6 +541,7 @@ a {
   font-weight: 600;
   transition: 0.3s;
   padding-inline: 12px;
+  padding-top: 10px;
 }
 a:hover {
   color: #e13238;
@@ -692,6 +695,7 @@ footer {
   justify-content: center;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 footer ul li a img {
@@ -735,6 +739,7 @@ footer ul li a img:hover {
 .ItemDetailContainer > li > p{
   font-size: 24px;
   margin: 0;
+  height: 90px;
 }
 
 .ItemDetailContainer > a {

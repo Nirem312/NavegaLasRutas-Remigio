@@ -1,15 +1,15 @@
 import './NavBar.css'
-import { ContadorCarrito } from './ContadorCarrito'
+import { ItemCount } from './ItemCount'
 
-export const ItemDetail = ({NombreDelItem, Precio, Imagen, Id}) => {
+export const ItemDetail = ({NombreDelItem, Precio, Imagen}) => {
   return(
-          <ul>
-              <div className="ItemDetailContainer">
-                <li><img src={Imagen} alt="Imagen del producto"/></li>
-                <li><p>{NombreDelItem}</p></li>
-                <li>Precio: {Precio}</li>
-                <ContadorCarrito />
-              </div>
-          </ul>
+    <ul>
+      <div className="ItemDetailContainer">
+        <li><img src={Imagen} alt="Imagen del producto"/></li>
+        <li><p>{NombreDelItem}</p></li>
+        <li>Precio: {Precio}</li>
+        <ItemCount Precio={Precio}/>
+      </div>
+    </ul>
   )
 }
