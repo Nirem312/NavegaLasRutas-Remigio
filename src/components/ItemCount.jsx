@@ -1,20 +1,22 @@
-import { useState } from "react"
+import { useContext } from 'react';
+import { MyContext } from '../context/MyContext';
 
 export const ItemCount = () => {
-  const [cantidad, setCantidad] = useState(0);
+
+  const {cart, setCart} = useContext(MyContext)
 
   const incrementar = () => {
-    setCantidad(cantidad + 1);
+    setCart(cart + 1);
   }
 
   const restar = () => {
-    if (cantidad > 0){
-      setCantidad(cantidad - 1)
+    if (cart > 0){
+      setCart(cart - 1)
     }
   }
 
   const agregar = () => {
-    if (cantidad == 0){
+    if (cart == 0){
       Swal.fire({
           title: 'No hay articulos en el carrito',
           text: 'Clickee el boton + para agregarlo al carrito',
@@ -23,8 +25,8 @@ export const ItemCount = () => {
       })        
     } else {
       let texto = ""
-      if (cantidad > 1){
-          texto = 'Se agregaron un total de '+cantidad+' articulos al carrito';
+      if (cart > 1){
+          texto = 'Se agregaron un total de '+cart+' articulos al carrito';
       } else {
           texto = 'Se agrego el articulo al carrito';
       }
@@ -34,7 +36,7 @@ export const ItemCount = () => {
           icon: 'success',
           confirmButtonText: 'Genial'
       })
-      setCantidad(0);
+      setCart(0);
     }
   }
 
@@ -42,7 +44,7 @@ export const ItemCount = () => {
     <div>
       <div className="controlesContador">
         <button onClick={restar} className="btn">-</button>
-        <h2>{cantidad}</h2>
+        <h2>{cart}</h2>
         <button onClick={incrementar} className="btn">+</button>
       </div>
       <button className="btn" onClick={agregar}>Agregar al carrito</button>
